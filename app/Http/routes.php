@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('ZoomIn', function () {
     return view('ZoomIn');
 });
+//Route::get('ZoomIn','UserController@indexSearch')
