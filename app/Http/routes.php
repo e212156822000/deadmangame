@@ -14,8 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('ZoomIn', function () {
-    return view('ZoomIn');
-});
-//Route::get('ZoomIn','UserController@indexSearch')
+Route::get('ZoomIn','JohnBeginning\JohnBeginning@ZoomIn');
