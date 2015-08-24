@@ -23,7 +23,6 @@
               width:1024px;
               height: 600px;
             }
-/*
             #together{
               position: absolute;
               top: -9999px;
@@ -34,11 +33,14 @@
               vertical-align : middle;
               width:1024px;
               height: 600px;
+              transition: all 2s ease-out;
+/*
               background: url('/img/JohnBeginning/background_stage1.png');
               background-position: center;
               background-size: cover;
-              transition: all 2s ease-out;
+*/
             }
+/*功能被img擋住了*/
             #together:hover{
               position: absolute;
               vertical-align : middle;
@@ -53,7 +55,7 @@
               transform-origin:50% 50%;
               filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',M11=2, M12=-0, M21=0, M22=2);
             }
-  */
+/*
             .zoom:hover{
               position: absolute;
               vertical-align : middle;
@@ -68,6 +70,7 @@
               transform-origin:50% 50%;
               filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',M11=2, M12=-0, M21=0, M22=2);
             }
+*/
               .choices{
                 position: absolute;
                 bottom: 0px;                
@@ -78,16 +81,17 @@
     @section('js')
       <script>
         $(document).ready(function(){
-            $("#together").click(function(){
-               $(".container").css("background","url(/img/JohnBeginning/Test2.jpg)");
+            $(".container").click(function(){              
+               $(".container").css("background","url(/img/JohnBeginning/Test2.jpg)");//換下一張圖，功能被擋住了
             });
-            $(".zoom").click(function(){
+/*
+            $("#together").click(function(){
                $(".zoom").attr({
                   src:"",
                   class:"nozoom",
                });
             });
-          
+  */        
         });
       </script>
     @stop
@@ -96,10 +100,10 @@
 
     <div class="container">
       <div id="together">
-        <img id="stage" class="zoom" ></img>
-        <!--src="{{ asset('/img/JohnBeginning/background_stage2.jpg') }}"
-            src="{{ asset('/img/JohnBeginning/background_stage1_window.png') }}"-->
-        <img id="window" class="zoom" src="{{ asset('/img/JohnBeginning/background_stage1.jpg') }}"></img>
+        <img id="stage" class="zoom" src="{{ asset('/img/JohnBeginning/background_stage1.png') }}"></img>
+        <!--src="{{ asset('/img/JohnBeginning/background_stage1.png') }}"   for id stage
+            src="{{ asset('/img/JohnBeginning/background_stage1_window.png') }}"for id window--> 
+        <img id="window" class="zoom" src="{{ asset('/img/JohnBeginning/background_stage1_window.png') }}"></img>
       </div>
       <div class="choices">
         1.打火機  2.打滾  3.拍掉  4.瑞士刀
